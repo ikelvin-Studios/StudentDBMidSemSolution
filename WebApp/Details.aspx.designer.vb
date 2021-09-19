@@ -11,32 +11,23 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class StudentsGridView
+Partial Public Class Details
 
     '''<summary>
-    '''StudentGridView control.
+    '''formDetails control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents StudentGridView As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents formDetails As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''GridView1 control.
+    '''LabelUsername control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''SqlDataSource1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents LabelUsername As Global.System.Web.UI.WebControls.Label
 End Class

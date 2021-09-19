@@ -51,6 +51,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -96,16 +98,48 @@
     <Content Include="App_Data\StudentDB_log.ldf">
       <DependentUpon>StudentDB.mdf</DependentUpon>
     </Content>
-    <Content Include="main.aspx" />
-    <Content Include="StudentsGridView.aspx" />
+    <None Include="Connected Services\localhost\WebService.disco" />
+    <None Include="Connected Services\localhost\configuration91.svcinfo" />
+    <None Include="Connected Services\localhost\configuration.svcinfo" />
+    <None Include="Connected Services\localhost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Details.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="navigation.html" />
+    <Content Include="Register.aspx" />
+    <Content Include="RegisterDetails.aspx" />
+    <Content Include="StudentsList.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="main.aspx.designer.vb">
-      <DependentUpon>main.aspx</DependentUpon>
+    <Compile Include="Connected Services\localhost\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="main.aspx.vb">
-      <DependentUpon>main.aspx</DependentUpon>
+    <Compile Include="Details.aspx.designer.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.aspx.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -127,17 +161,35 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="StudentsGridView.aspx.designer.vb">
-      <DependentUpon>StudentsGridView.aspx</DependentUpon>
+    <Compile Include="Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudentsGridView.aspx.vb">
-      <DependentUpon>StudentsGridView.aspx</DependentUpon>
+    <Compile Include="Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RegisterDetails.aspx.designer.vb">
+      <DependentUpon>RegisterDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterDetails.aspx.vb">
+      <DependentUpon>RegisterDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="StudentsList.aspx.designer.vb">
+      <DependentUpon>StudentsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentsList.aspx.vb">
+      <DependentUpon>StudentsList.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="TestDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WebService.asmx.vb">
+      <DependentUpon>WebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -149,10 +201,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
+    <None Include="Connected Services\localhost\WebService.wsdl" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="My Project\DataSources\System.Data.DataTable.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -176,6 +231,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\localhost\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
